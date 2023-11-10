@@ -36,3 +36,12 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+config
+description
+HEAD
+/hooks
+/info
+/objects
+/refs
+/branches
