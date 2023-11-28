@@ -1,14 +1,23 @@
 package org.example.Imc;
 
-public class CalculoIMC {
+import org.example.App;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+public class CalculoIMC {
     public static float realizaCalculoIMC(float peso, float altura){
+        if (peso < 0 || altura < 0){
+            throw new IllegalArgumentException("Não pode conter valores menores que 0");
+        }
         float imc;
         imc = peso / (altura * altura);
         return imc;
     }
 
     public static String classificaIMC(float imc){
+        if (imc < 0){
+            throw new IllegalArgumentException("O IMC não pode ser negativo");
+        }
         if (imc < 16.0){
             return "Magreza Grave";
         }
